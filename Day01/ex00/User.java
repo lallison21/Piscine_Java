@@ -6,7 +6,10 @@ public class User {
 	public User (Integer id, String name, Integer balance) {
 		this.id = id;
 		this.name = name;
-		this.balance = balance;
+		if (balance < 0)
+			this.balance = 0;
+		else
+			this.balance = balance;
 	}
 
 	public String getName() {
