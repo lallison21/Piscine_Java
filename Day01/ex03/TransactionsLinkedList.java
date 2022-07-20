@@ -8,10 +8,11 @@ public class TransactionsLinkedList implements TransactionsList {
 
 	@Override
 	public void addTransaction(Transaction transaction) {
-		if (this.head == null)
+		if (this.head == null) {
 			this.head = transaction;
-		else
+		} else {
 			tail.setNext(transaction);
+		}
 		tail = transaction;
 		linkedListSize++;
 	}
