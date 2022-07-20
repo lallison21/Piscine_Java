@@ -2,6 +2,7 @@ public class User {
 	private Integer id;
 	private String name;
 	private Integer balance;
+	private TransactionsList transactionsList;
 
 	public User (String name, Integer balance) {
 		this.id = UserIdsGenerator.getInstance().generateId();
@@ -31,5 +32,13 @@ public class User {
 
 	public Integer getId() {
 		return id;
+	}
+
+	public TransactionsList getTransactionsList() {
+		return transactionsList;
+	}
+
+	public void setTransactionsList(TransactionsList transactionsList) {
+		this.transactionsList = transactionsList;
 	}
 }
