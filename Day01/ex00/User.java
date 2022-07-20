@@ -6,10 +6,11 @@ public class User {
 	public User (Integer id, String name, Integer balance) {
 		this.id = id;
 		this.name = name;
-		if (balance < 0)
+		if (balance < 0) {
 			this.balance = 0;
-		else
+		} else {
 			this.balance = balance;
+		}
 	}
 
 	public String getName() {
@@ -25,10 +26,11 @@ public class User {
 	}
 
 	public void setBalance(Integer balance) {
-		if (balance < 0)
+		if (balance < 0) {
 			this.balance = 0;
-		else
+		} else {
 			this.balance = balance;
+		}
 	}
 
 	public Integer getId() {

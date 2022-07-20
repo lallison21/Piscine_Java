@@ -10,13 +10,16 @@ public class Program {
 			System.exit(-1);
 		}
 		int i;
-		for (i = 2; i * i <= num; i++)
-			if (num % i == 0)
-				break ;
-		if (i * i > num || num == 3)
+		for (i = 2; i * i <= num; i++) {
+			if (num % i == 0) {
+				break;
+			}
+		}
+		if (i * i > num || num == 3) {
 			System.out.println("true " + --i);
-		else
+		} else {
 			System.out.println("false " + --i);
+		}
 		sc.close();
 	}
 }

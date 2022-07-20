@@ -25,21 +25,25 @@ public class Program {
 
 			if (week.equalsIgnoreCase("Week")) {
 				day = sc.nextInt();
-				if (day != i)
+				if (day != i) {
 					errorMessage(sc);
-			} else if (week.equals(EXIT))
+				}
+			} else if (week.equals(EXIT)) {
 				break;
-			else
+			} else {
 				errorMessage(sc);
+			}
 
 			for (int j = 0; j < MAX_GRADE_ON_WEEK; j++) {
 				grade = sc.nextInt();
-				if (grade < MIN_GRADE || grade > MAX_GRADE)
+				if (grade < MIN_GRADE || grade > MAX_GRADE) {
 					errorMessage(sc);
-				if (j == 0)
+				}
+				if (j == 0) {
 					minGrade = grade;
-				else if (grade < minGrade)
+				} else if (grade < minGrade) {
 					minGrade = grade;
+				}
 			}
 
 			all += minGrade * rate;
@@ -53,8 +57,9 @@ public class Program {
 			System.out.print(n);
 			System.out.print(" ");
 			stat = all % 10;
-			for (int j = 0; j < stat; j++)
+			for (int j = 0; j < stat; j++) {
 				System.out.print("=");
+			}
 			System.out.println(">");
 			all /= 10;
 		}

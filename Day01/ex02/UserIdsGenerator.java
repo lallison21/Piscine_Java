@@ -6,8 +6,9 @@ public class UserIdsGenerator {
 	private static UserIdsGenerator userIdsGenerator;
 
 	public static UserIdsGenerator getInstance() {
-		if (userIdsGenerator == null)
+		if (userIdsGenerator == null) {
 			userIdsGenerator = new UserIdsGenerator();
+		}
 		return userIdsGenerator;
 	}
 

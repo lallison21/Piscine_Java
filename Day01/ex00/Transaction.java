@@ -53,15 +53,17 @@ public class Transaction {
 
 	public void setAmount(Integer amount) {
 		if (category == Category.CREDIT) {
-			if (amount > 0)
+			if (amount > 0) {
 				this.amount = 0;
-			else
+			} else {
 				this.amount = amount;
+			}
 		} else if (category == Category.DEBIT) {
-			if (amount < 0)
+			if (amount < 0) {
 				this.amount = 0;
-			else
+			} else {
 				this.amount = amount;
+			}
 		}
 	}
 }

@@ -14,6 +14,7 @@ public class Program {
 		System.out.println();
 
 		Transaction transaction1 = new Transaction(user2, user3, Transaction.Category.DEBIT, 30000);
+
 		System.out.println(transaction1.getId());
 		System.out.println(transaction1.getRecipient().getId());
 		System.out.println(transaction1.getSender().getId());
@@ -23,6 +24,7 @@ public class Program {
 		System.out.println();
 
 		Transaction transaction2 = new Transaction(user1, user3, Transaction.Category.DEBIT, -30000);
+
 		System.out.println(transaction2.getId());
 		System.out.println(transaction2.getRecipient().getId());
 		System.out.println(transaction2.getSender().getId());
@@ -32,6 +34,7 @@ public class Program {
 		System.out.println();
 
 		Transaction transaction3 = new Transaction(user1, user3, Transaction.Category.CREDIT, 30000);
+
 		System.out.println(transaction3.getId());
 		System.out.println(transaction3.getRecipient().getId());
 		System.out.println(transaction3.getSender().getId());
@@ -41,6 +44,7 @@ public class Program {
 		System.out.println();
 
 		Transaction transaction4 = new Transaction(user1, user3, Transaction.Category.CREDIT, -30000);
+
 		System.out.println(transaction4.getId());
 		System.out.println(transaction4.getRecipient().getId());
 		System.out.println(transaction4.getSender().getId());
