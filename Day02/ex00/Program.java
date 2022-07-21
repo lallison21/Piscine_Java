@@ -2,7 +2,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -13,7 +12,7 @@ public class Program {
 	public static final char[] HEX_CHAR_ARRAY = "0123456789ABCDEF".toCharArray();
 
 	public static void main(String[] args) {
-		Map<String, String> map = new HashMap<String, String>();
+		Map<String, String> map = new HashMap<>();
 
 		try (Scanner scanner = new Scanner(new FileInputStream("signatures.txt"))) {
 			while (scanner.hasNextLine()) {
