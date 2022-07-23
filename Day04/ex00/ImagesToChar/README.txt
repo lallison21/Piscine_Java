@@ -1,10 +1,10 @@
-#delete target directory
+#remove target directory
 rm -rf target
 
-#make directory named target
+#create directory named target
 mkdir target
 
-#copile all .java files
+#compile all .java files
 javac `find . -name "*.java"` -d ./target
 
 #launch java project
