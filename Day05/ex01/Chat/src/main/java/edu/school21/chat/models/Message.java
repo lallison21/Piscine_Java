@@ -7,15 +7,15 @@ import java.util.Objects;
 public class Message {
 
 	private Long id;
-	private User author;
+	private User sender;
 	private Chatroom room;
 	private String text;
 	private Timestamp dateTime;
 
-	public Message (Long id, User author, Chatroom room, String text, Timestamp dateTime) {
+	public Message (Long id, User sender, Chatroom room, String text, Timestamp dateTime) {
 
 		this.id = id;
-		this.author = author;
+		this.sender = sender;
 		this.room =	room;
 		this.text = text;
 		this.dateTime = dateTime;
