@@ -33,7 +33,7 @@ public class Message {
 		}
 		Message message = (Message) o;
 
-		return Objects.equals(id, message.id) && Objects.equals(author, message.author)
+		return Objects.equals(id, message.id) && Objects.equals(sender, message.sender)
 				&& Objects.equals(room, message.room) && Objects.equals(text, message.text)
 				&& Objects.equals(dateTime, message.dateTime);
 	}
@@ -41,7 +41,7 @@ public class Message {
 	@Override
 	public int hashCode() {
 
-		return Objects.hash(id, author, room, text, dateTime);
+		return Objects.hash(id, sender, room, text, dateTime);
 	}
 
 	@Override
@@ -49,7 +49,7 @@ public class Message {
 
 		return "Message{" +
 				"id=" + id +
-				", author=" + author +
+				", author=" + sender +
 				", room=" + room +
 				", text='" + text + '\'' +
 				", dateTime=" + dateTime +
