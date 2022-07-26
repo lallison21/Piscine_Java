@@ -49,8 +49,8 @@ public class User {
 
 		return "User{" +
 				"id=" + id +
-				", login=" + login + '\'' +
-				", password=" + password + '\'' +
+				", login='" + login + '\'' +
+				", password='" + password + '\'' +
 				", rooms=" + rooms +
 				", activeRooms=" + activeRooms +
 				'}';

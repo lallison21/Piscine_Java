@@ -47,12 +47,12 @@ public class Message {
 	@Override
 	public String toString() {
 
-		return "Message{" +
-				"id=" + id +
-				", author=" + sender +
-				", room=" + room +
-				", text='" + text + '\'' +
-				", dateTime=" + dateTime +
-				'}';
+		return "Message : {\n" +
+				"\tid=" + id +
+				",\n\tauthor=" + sender +
+				",\n\troom=" + room +
+				",\n\ttext='" + text + '\'' +
+				",\n\tdateTime=" + dateTime +
+				"\n}";
 	}
 }
