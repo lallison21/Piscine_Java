@@ -18,6 +18,6 @@ create table if not exists chat.msgs (
     id              serial primary key ,
     room_id         int not null references chat.room(id) ,
     sender          int not null references chat.users(id) ,
-    massege         text not null ,
+    message         text not null ,
     time            timestamp
 );
