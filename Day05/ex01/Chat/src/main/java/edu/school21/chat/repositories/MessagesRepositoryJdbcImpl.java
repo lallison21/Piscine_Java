@@ -24,9 +24,7 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 
 		Connection connection = dataSource.getConnection();
 
-		Statement statement = connection.createStatement();
-
-		ResultSet resultSet = statement.executeQuery("SLECET * FROM chat.msgs WHERE id=" + id);
+		ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM chat.msgs WHERE id=" + id);
 		resultSet.next();
 
 		Long messageId = resultSet.getLong("id");
@@ -35,8 +33,8 @@ public class MessagesRepositoryJdbcImpl implements MessagesRepository {
 		String message = resultSet.getString("message");
 		Timestamp timestamp = resultSet.getTimestamp("time");
 
-		ResultSet senderSet =  statement.executeQuery("SLECET * FROM chat.users WHERE id=" + senderId);
-		ResultSet roomSet = statement.executeQuery("SELECT * FROM chat.room WHERE id=" + roomId);
+		ResultSet senderSet =  connection.createStatement().executeQuery("SELECT * FROM chat.users WHERE id=" + senderId);
+		ResultSet roomSet = connection.createStatement().executeQuery("SELECT * FROM chat.room WHERE id=" + roomId);
 
 		senderSet.next();
 		roomSet.next();

@@ -10,7 +10,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
@@ -39,9 +38,8 @@ public class Program {
 
 		Connection connection = hikariDataSource.getConnection();
 
-		Statement statement = connection.createStatement();
-		createSchema(statement, schemaQuery);
-		insertToDB(statement, dataQuery);
+		createSchema(connection, schemaQuery);
+		insertToDB(connection, dataQuery);
 
 		MessagesRepository messagesRepository = new MessagesRepositoryJdbcImpl(hikariDataSource);
 
@@ -64,18 +62,17 @@ public class Program {
 		}
 	}
 
-	private static void insertToDB(Statement statement, List<String> dataQueries) throws SQLException {
+	private static void insertToDB(Connection connection, List<String> dataQueries) throws SQLException {
 
 		for (String dataQuery : dataQueries) {
-			statement.execute(dataQuery);
+			connection.createStatement().execute(dataQuery);
 		}
 	}
 
-	private static void createSchema(Statement statement, List<String> schemaQueries) throws SQLException {
+	private static void createSchema(Connection connection, List<String> schemaQueries) throws SQLException {
 
 		for (String schemaQuery : schemaQueries) {
-			statement.execute(schemaQuery);
+			connection.createStatement().execute(schemaQuery);
 		}
 	}
-
 }
