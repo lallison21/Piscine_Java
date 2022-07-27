@@ -33,3 +33,8 @@ public class NumberWorker {
 	}
 }
 
+class IllegalNumberException extends RuntimeException {
+	public IllegalNumberException(String string) {
+		super(string);
+	}
+}
