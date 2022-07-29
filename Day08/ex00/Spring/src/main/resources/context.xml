@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="upper" class="preprocessor.PreProcessorToUpperImpl"/>
+
+    <bean id="lower" class="preprocessor.PreProcessorToLower"/>
+
+<!--    Error Upper Prefix -->
+
+    <bean id="err" class="renderer.RendererErrImpl">
+        <constructor-arg name="preProcessor" ref="upper"/>
+    </bean>
+
+    <bean id="prefix" class="printer.PrinterWithPrefixImpl">
+        <constructor-arg name="renderer" ref="err"/>
+    </bean>
+
+<!--    Error Lower Prefix -->
+
+    <bean id="err2" class="renderer.RendererErrImpl">
+        <constructor-arg name="preProcessor" ref="lower"/>
+    </bean>
+
+    <bean id="prefix2" class="printer.PrinterWithPrefixImpl">
+        <constructor-arg name="renderer" ref="err2"/>
+    </bean>
+
+<!--    Error Upper DateTime -->
+
+    <bean id="dateTime" class="printer.PrinterWithDateTimeImpl">
+        <constructor-arg name="renderer" ref="err"/>
+    </bean>
+
+<!--    Error Lower DateTime -->
+
+    <bean id="dateTime2" class="printer.PrinterWithDateTimeImpl">
+        <constructor-arg name="renderer" ref="err2"/>
+    </bean>
+
+<!--    Standard Upper Prefix -->
+
+    <bean id="standard" class="renderer.RendererStandardImpl">
+        <constructor-arg name="preProcessor" ref="upper"/>
+    </bean>
+
+    <bean id="prefix3" class="printer.PrinterWithPrefixImpl">
+        <constructor-arg name="renderer" ref="standard"/>
+    </bean>
+
+<!--    Standard Lower Prefix -->
+
+    <bean id="standard2" class="renderer.RendererStandardImpl">
+        <constructor-arg name="preProcessor" ref="lower"/>
+    </bean>
+
+    <bean id="prefix4" class="printer.PrinterWithPrefixImpl">
+        <constructor-arg name="renderer" ref="standard2"/>
+    </bean>
+
+<!--    Standard Upper DateTime -->
+
+    <bean id="dateTime3" class="printer.PrinterWithDateTimeImpl">
+        <constructor-arg name="renderer" ref="standard"/>
+    </bean>
+
+<!--    Standard Lower DateTime -->
+
+    <bean id="dateTime4" class="printer.PrinterWithDateTimeImpl">
+        <constructor-arg name="renderer" ref="standard2"/>
+    </bean>
+
+</beans>
