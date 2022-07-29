@@ -1,9 +1,7 @@
 package app;
 
-import printer.Printer;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import printer.PrinterWithDateTimeImpl;
 import printer.PrinterWithPrefixImpl;
 
 public class Program {
